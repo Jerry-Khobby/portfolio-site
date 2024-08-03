@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import React,{useState,useEffect} from 'react'
+
 
 function App() {
+
+  const [mousePos,setMousePos]=useState({x:0,y:0});
+
+  useEffect(() => {
+    const handleMouseMove = (event) => {
+      setMousePos({ x: event.clientX, y: event.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div 
+        className="flashlight"
+        style={{ left: mousePos.x, top: mousePos.y }}>
+      </div>
+      <div>{/** fixed section */}</div>
+
+<div>{/** scrollable sections */}</div>    
     </div>
   );
 }
