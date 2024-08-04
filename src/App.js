@@ -1,5 +1,7 @@
 import './App.css';
 import React,{useState,useEffect} from 'react'
+import HomeComponent from './components/Home/main';
+import About from './components/About/main';
 
 
 function App() {
@@ -23,9 +25,13 @@ function App() {
         className="flashlight"
         style={{ left: mousePos.x, top: mousePos.y }}>
       </div>
-      <div>{/** fixed section */}</div>
-
-<div>{/** scrollable sections */}</div>    
+      <div>
+      <HomeComponent/> 
+      </div>
+     <div>
+     <About/> 
+     </div>
+     
     </div>
   );
 }
