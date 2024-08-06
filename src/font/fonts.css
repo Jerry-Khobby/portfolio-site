@@ -1,0 +1,9 @@
+@font-face{
+  font-family: 'CustomFont';
+  src:url('../font/Mochain-BF64f036e4a7ea4.ttf') format('ttf'),
+  url('../font/Mochain-BF64f036e52aea9.otf') format('otf'),
+}
+
+body{
+  font-family: 'CustomFont',sans-serif;
+}

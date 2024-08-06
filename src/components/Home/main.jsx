@@ -17,8 +17,8 @@ export default function HomeComponent() {
   }, [])
 
   return (
-    <div className='h-[100vh] relative'>
-      <div className='flex justify-center items-center h-[80%] pt-[7%] pb-[3%]'>
+    <div className='h-full pt-[3%]'>
+      <div className='flex justify-center items-center h-[80%] pt-[7%] pb-[5%]'>
         <div id="headContainer" className='w-7/12'>
           <div className='text-center tracking-[5px] text-lg' id="head1">
             HI I AM <div className='inline text-blue-500'>JEREMIAH ANKU COBLAH</div>
