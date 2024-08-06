@@ -5,6 +5,7 @@ import About from './components/About/main';
 import NavbarComponent from './components/Navbar/main';
 import "../src/font/FiraCode-Light.ttf";
 import ExperienceComponent from './experiences/main';
+import ProjectsComponent from './components/Projects/main';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <HomeComponent/> 
      <About/> 
      <ExperienceComponent/> 
+     <ProjectsComponent/>
     </div>
   );
 }

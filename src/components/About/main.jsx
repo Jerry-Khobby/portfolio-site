@@ -10,7 +10,7 @@ const AboutComponent = () => {
       </div>
       <div>
         {/** descriptions */}
-      <p className='text-white sm:text-sm md:text-sm lg:text-lg text-sm text-bold' style={{fontFamily:'Fira Code'}}>
+      <p className='text-white sm:text-md md:text-md lg:text-lg text-md text-bold' style={{fontFamily:'Fira Code'}}>
       I am a full stack mobile and web app developer with nearly 3 years of experience. I craft dynamic and efficient applications, driven by a keen enthusiasm for data science and machine learning.
       I continuously expand my knowledge and skills, and I'm passionate about using my diverse background to drive innovation and improve user experiences.
       I am eager to contribute to a forward-thinking team with my dedication and expertise.
