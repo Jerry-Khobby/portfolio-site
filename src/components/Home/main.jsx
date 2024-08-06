@@ -17,7 +17,7 @@ export default function HomeComponent() {
   }, [])
 
   return (
-    <div className='h-full pt-[3%]'>
+    <div className='h-full pt-[12%] sm:pt-[12%] md:pt-[5%] lg:pt-[3%]'>
       <div className='flex justify-center items-center h-[80%] pt-[7%] pb-[5%]'>
         <div id="headContainer" className='w-7/12'>
           <div className='text-center tracking-[5px] text-lg' id="head1">
