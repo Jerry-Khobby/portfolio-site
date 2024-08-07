@@ -1,7 +1,42 @@
-import React from 'react';
-import { FaEnvelope, FaPhone, FaTwitter, FaFacebook, FaLinkedin } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaEnvelope, FaPhone, FaTwitter, FaFacebook, FaLinkedin, FaGithub } from 'react-icons/fa';
 
-const ContactComponent = () => {
+const ContactComponent = (props) => {
+  const [formData, setFormData] = useState({
+    email: '',
+    description: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch({props}, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const result = await response.json();
+      if (response.ok) {
+        alert('Email sent successfully!');
+      } else {
+        alert(`Error: ${result.message}`);
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Error sending email');
+    }
+  };
+
   return (
     <div className='h-full w-full px-4 sm:px-4 lg:px-48 md:px-36 flex flex-col items-start pb-10 mt-14'>
       <div>
@@ -9,18 +44,36 @@ const ContactComponent = () => {
           Contact Me
         </h4>
       </div>
-      <div className='flex flex-col lg:flex-row gap-[1rem] sm:gap-[1rem] md:gap-[1rem] lg:gap-[30rem] mt-8'>
-        <div className='flex flex-col w-full'>
+      <div className='flex flex-col lg:flex-row gap-[1rem] sm:gap-[1rem] md:gap-[1rem] lg:gap-[24rem] mt-8'>
+        <form onSubmit={handleSubmit} className='flex flex-col w-full'>
           <div className='mb-4 flex items-start text-start text-md text-white' style={{ fontFamily: 'Fira Code' }}>Suggestions Box</div>
           <div className='mb-4'>
-            <h2>Email</h2>
-            <input type="email" className='border p-2 rounded w-full' />
+            <h2 className='text-white text-sm pb-2' style={{ fontFamily: 'Fira Code' }}>Email</h2>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className='border p-2 rounded w-full'
+              placeholder='Enter your email'
+            />
           </div>
           <div>
-            <h2>Description</h2>
-            <input type="text" className='border p-2 rounded w-full' />
+            <h2 className='text-white text-sm pb-2' style={{ fontFamily: 'Fira Code' }}>Description</h2>
+            <textarea
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              className='border p-2 rounded w-[20rem] h-[10rem]'
+              placeholder='Enter your text'
+            />
           </div>
-        </div>
+          <div>
+            <button type="submit" className='bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300'>
+              Send
+            </button>
+          </div>
+        </form>
         <div className='flex flex-col w-full'>
           <div className='mb-4 flex items-start text-start text-md text-white' style={{ fontFamily: 'Fira Code' }}>Let's work together</div>
           <div className='mb-4'>
@@ -34,18 +87,21 @@ const ContactComponent = () => {
           <div className='text-center'>
             <hr className='my-4 border-gray-600 w-full sm:w-4/5 md:w-1/2 lg:w-1/3 mx-auto' />
             <div className='flex space-x-4 mb-4 items-center justify-center'>
-              <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
+              <a href="https://twitter.com/jerry92023784" target="_blank" rel="noopener noreferrer">
                 <FaTwitter className='text-white' />
               </a>
-              <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/jerry.mardeburg" target="_blank" rel="noopener noreferrer">
                 <FaFacebook className='text-white' />
               </a>
-              <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/jeremiah-coblah-anku-2b3732229/" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin className='text-white' />
               </a>
+              <a href="https://github.com/Jerry-Khobby" target="_blank" rel="noopener noreferrer">
+                <FaGithub className='text-white' />
+              </a>
             </div>
-            <div className='text-white text-center text-sm mt-4'>
-              © 2024 Made by Jerry
+            <div className='text-white text-center text-sm mt-4 font-serif'>
+              © ❤️2024 Made by Jerry
             </div>
           </div>
         </div>
