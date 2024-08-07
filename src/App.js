@@ -9,6 +9,7 @@ import ProjectsComponent from './components/Projects/main';
 import SkillsComponent from './components/skills/main';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ContactComponent from './components/contact/main';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
      <ExperienceComponent/> 
      <ProjectsComponent/>
      <SkillsComponent/>
+     <ContactComponent/>
     </div>
   );
 }

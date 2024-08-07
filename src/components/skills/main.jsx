@@ -11,13 +11,13 @@ const SkillsComponent = () => {
       </div>
       <div className="mt-10 w-full overflow-hidden">
         <div className="flex items-center">
-          <div className="flex animate-scroll gap-3">
-            {skills.concat(skills).map((skill, skillIndex) => (
+          <div className="flex animate-scroll gap-5">
+            {[...skills, ...skills].map((skill, skillIndex) => (
               <div key={skillIndex} className='flex flex-col items-center w-1/4'>
                 <div className='w-20 h-20 flex items-center justify-center'>
                   {skill.iconsSvg}
                 </div>
-                <div className='text-white text-center mt-1 text-sm font-serif'>{skill.name}</div>
+                <div className='text-white text-center mt-2 text-sm font-serif'>{skill.name}</div>
               </div>
             ))}
           </div>
