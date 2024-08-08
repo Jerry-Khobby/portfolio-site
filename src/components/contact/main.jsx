@@ -9,6 +9,8 @@ const ContactComponent = (props) => {
     name:'',
   });
   const [sendEmail,setSendMail]=useState(false);
+  const [messages,setMessages]=useState('');
+  const [warning,setWarning]=useState(false);
 
   let templateParams={
     name:formData.name,
@@ -29,33 +31,34 @@ const ContactComponent = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try{
-      await emailjs.send('service_b6gajr8','template_vnv8ubp',templateParams,{
-        publicKey: '-pLj7W8JGApqzQgWZ',
-      })
-      .then(
-        (response)=>{
-          console.log('SUCCESS!',response.status,response.text);
+    try {
+      await emailjs.send(process.env.SERVICE_ID,process.env.TEMPLATE_ID, templateParams, {
+        publicKey:process.env.PUBLIC_ID,
+      }).then(
+        (response) => {
+          console.log('SUCCESS!', response.status, response.text);
           setFormData({
-            name:'',description:'',email:''
-          });
-          setTimeout(()=>{
+            name: '', description: '', email: ''
+          })
+          setTimeout(() => {
             setSendMail(true);
-          },5000);
-         
+            setMessages('Email sent successfully');
+          }, 1000);
         },
-        (err)=>{
-          console.log('FAILED.....',err);
+        (err) => {
+          console.log('FAILED.....', err);
+          setMessages('Email Failed to be Sent');
         }
-      )
-
-    }catch(e){
-      console.log("There was an error")
+      );
+    } catch (e) {
+      console.log("There was an error", e);
+  setTimeout(()=>{
+    setMessages('Email Failed to be Sent, check your network');
+    setWarning(true);
+  },5000);
     }
-   
-
   };
-
+  
   return (
     <div className='h-full w-full px-4 sm:px-4 lg:px-48 md:px-36 flex flex-col items-start pb-10 mt-14'>
       <div>
@@ -67,7 +70,7 @@ const ContactComponent = (props) => {
         <form onSubmit={handleSubmit} className='flex flex-col w-full'>
           <div className='mb-4 flex items-start text-start text-md text-white' style={{ fontFamily: 'Fira Code' }}>Suggestions Box</div>
           {sendEmail&&(
-            <div className='text-green  text-md font-serif'>Email  was Sent Successfull</div>
+            <div className={`text-md font-serif ${warning?'text-red-500':'text-green-600'}`}>{messages}</div>
           )}
           <div className='mb-4'>
             <h2 className='text-white text-sm pb-2' style={{ fontFamily: 'Fira Code' }}>Name</h2>
