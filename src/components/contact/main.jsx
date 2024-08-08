@@ -32,8 +32,8 @@ const ContactComponent = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await emailjs.send(process.env.SERVICE_ID,process.env.TEMPLATE_ID, templateParams, {
-        publicKey:process.env.PUBLIC_ID,
+      await emailjs.send(process.env.REACT_APP_SERVICE_ID,process.env.REACT_APP_TEMPLATE_ID, templateParams, {
+        publicKey:process.env.REACT_APP_PUBLIC_ID,
       }).then(
         (response) => {
           console.log('SUCCESS!', response.status, response.text);
