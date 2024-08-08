@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
 import { FaEnvelope, FaPhone, FaTwitter, FaFacebook, FaLinkedin, FaGithub } from 'react-icons/fa';
+import emailjs from "@emailjs/browser";
 
 const ContactComponent = (props) => {
   const [formData, setFormData] = useState({
     email: '',
-    description: ''
+    description: '',
+    name:'',
   });
+  const [sendEmail,setSendMail]=useState(false);
+
+  let templateParams={
+    name:formData.name,
+    email:formData.email,
+    notes:formData.description
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -15,26 +24,36 @@ const ContactComponent = (props) => {
     }));
   };
 
+
+  // handle sending the email 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch({props}, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+    try{
+      await emailjs.send('service_b6gajr8','template_vnv8ubp',templateParams,{
+        publicKey: '-pLj7W8JGApqzQgWZ',
+      })
+      .then(
+        (response)=>{
+          console.log('SUCCESS!',response.status,response.text);
+          setFormData({
+            name:'',description:'',email:''
+          });
+          setTimeout(()=>{
+            setSendMail(true);
+          },5000);
+         
         },
-        body: JSON.stringify(formData),
-      });
-      const result = await response.json();
-      if (response.ok) {
-        alert('Email sent successfully!');
-      } else {
-        alert(`Error: ${result.message}`);
-      }
-    } catch (error) {
-      console.error('Error sending email:', error);
-      alert('Error sending email');
+        (err)=>{
+          console.log('FAILED.....',err);
+        }
+      )
+
+    }catch(e){
+      console.log("There was an error")
     }
+   
+
   };
 
   return (
@@ -47,6 +66,21 @@ const ContactComponent = (props) => {
       <div className='flex flex-col lg:flex-row gap-[1rem] sm:gap-[1rem] md:gap-[1rem] lg:gap-[24rem] mt-8'>
         <form onSubmit={handleSubmit} className='flex flex-col w-full'>
           <div className='mb-4 flex items-start text-start text-md text-white' style={{ fontFamily: 'Fira Code' }}>Suggestions Box</div>
+          {sendEmail&&(
+            <div className='text-green  text-md font-serif'>Email  was Sent Successfull</div>
+          )}
+          <div className='mb-4'>
+            <h2 className='text-white text-sm pb-2' style={{ fontFamily: 'Fira Code' }}>Name</h2>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              className='border p-2 rounded w-full'
+              required
+              placeholder='Enter your name'
+            />
+          </div>
           <div className='mb-4'>
             <h2 className='text-white text-sm pb-2' style={{ fontFamily: 'Fira Code' }}>Email</h2>
             <input
@@ -55,6 +89,7 @@ const ContactComponent = (props) => {
               value={formData.email}
               onChange={handleChange}
               className='border p-2 rounded w-full'
+              required
               placeholder='Enter your email'
             />
           </div>
@@ -66,6 +101,7 @@ const ContactComponent = (props) => {
               onChange={handleChange}
               className='border p-2 rounded w-[20rem] h-[10rem]'
               placeholder='Enter your text'
+              required 
             />
           </div>
           <div>
