@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Container, Grid } from '@mui/material'
-import photo from "../../assets/myphoto.jpg"
+import { BsFileEarmarkPdf, BsGithub } from "react-icons/bs";
+import { Tooltip } from 'react-tooltip';
 
 const NavbarComponent = () => {
   return (
@@ -23,10 +24,31 @@ const NavbarComponent = () => {
               <h1 className='text-white font-serif text-xl cursor-pointer' style={{fontFamily:'Fira Code'}}>JherryDev</h1>
             </Box>
           </Grid>
-          <Grid item xs={2} sm={3} md={2} lg={2} display="flex" justifyContent="center" alignItems="center">
-            <div className="  w-8 cursor-pointer h-8 lg:w-14 lg:h-14 sm:w-8 sm:h-8 md:w-12 md:h-12 rounded-full overflow-hidden border-2 border-gray-300 flex items-center justify-center bg-white">
-              <img src={photo} alt="my-profile-picture" className="w-full h-full object-cover" />
-            </div>
+          <Grid item xs={2} sm={3} md={2} lg={2} display="flex" gap="10px" justifyContent="center" alignItems="center">
+         <div className='flex mt-26 space-x-4 '>
+        <a 
+          href="https://drive.google.com/file/d/17YFKflQxGggZ4ywoxQuwWSJmWmzgHQVN/view" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          title="Download Resume" 
+          className="bg-gray-700 p-3 rounded hover:bg-gray-800 transition"
+          data-tooltip-id="downloadResume"
+        >
+          <BsFileEarmarkPdf className="text-white text-sm" />
+        </a>
+        <Tooltip id="downloadResume" content="Resume" />
+        <a 
+          href="https://github.com/Jerry-Khobby" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          title="GitHub" 
+          className="bg-gray-700 p-3 rounded hover:bg-gray-800 transition"
+          data-tooltip-id="Github"
+        >
+          <BsGithub className="text-white text-sm" />
+        </a>
+        <Tooltip id="Github" content="Github" />
+      </div>
           </Grid>
         </Grid>
       </Container>
