@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaEnvelope, FaPhone, FaTwitter, FaFacebook, FaLinkedin, FaGithub } from 'react-icons/fa';
 import emailjs from "@emailjs/browser";
 
-const ContactComponent = (props) => {
+const ContactComponent = () => {
   const [formData, setFormData] = useState({
     email: '',
     description: '',
@@ -32,32 +32,31 @@ const ContactComponent = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await emailjs.send(process.env.REACT_APP_SERVICE_ID,process.env.REACT_APP_TEMPLATE_ID, templateParams, {
-        publicKey:process.env.REACT_APP_PUBLIC_ID,
-      }).then(
-        (response) => {
-          console.log('SUCCESS!', response.status, response.text);
-          setFormData({
-            name: '', description: '', email: ''
-          })
-          setTimeout(() => {
-            setSendMail(true);
-            setMessages('Email sent successfully');
-          }, 1000);
-        },
-        (err) => {
-          console.log('FAILED.....', err);
-          setMessages('Email Failed to be Sent');
-        }
+      const response = await emailjs.send(
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
+        templateParams,
+        process.env.REACT_APP_PUBLIC_ID
       );
-    } catch (e) {
-      console.log("There was an error", e);
-  setTimeout(()=>{
-    setMessages('Email Failed to be Sent, check your network');
-    setWarning(true);
-  },5000);
+      console.log('SUCCESS!', response.status, response.text);
+      setFormData({ name: '', description: '', email: '' });
+      setMessages('Email sent successfully');
+      setSendMail(true);
+  
+    } catch (err) {
+      console.log('FAILED.....', err);
+      setMessages('Email Failed to be Sent');
+      setWarning(true);
     }
+  
+    // Clear the message after 5 seconds
+    setTimeout(() => {
+      setMessages('');
+      setSendMail(false);
+      setWarning(false);
+    }, 5000);
   };
+  
   
   return (
     <div className='h-full w-full px-4 sm:px-4 lg:px-48 md:px-36 flex flex-col items-start pb-10 mt-14'>
