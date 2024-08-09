@@ -37,7 +37,7 @@ export default function HomeComponent() {
         <h4 className="text-lg text-gray-400  mt-10" style={{fontFamily:'Fira Code'}}>Software Developer</h4>
       </div>
       <div className='mt-20'>
-        <p className='text-white text-md'style={{fontFamily:'Fira Code'}}>You can access my Resume and Github account from the link below</p>
+        <p className='text-white text-sm sm:text-sm md:text-md lg:text-md'style={{fontFamily:'Fira Code'}}>You can access my Resume and Github account from the link below</p>
       </div>
 
       <div className='flex mt-26 space-x-4'>
