@@ -1,50 +1,41 @@
-import React,{useEffect} from 'react'
-import './home.css'
-import { BsFileEarmarkPdf, BsGithub, BsChevronDoubleDown } from "react-icons/bs";
-
+import React, { useEffect, useState } from 'react';
+import './home.css';
+import { BsFileEarmarkPdf, BsGithub } from "react-icons/bs";
 
 export default function HomeComponent() {
+  const name = "Jeremiah Anku Coblah";
+  const delay = 150;
+  const [currentText, setCurrentText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [infinite, setInfinite] = useState(true); // Assume you want infinite loop
 
+  // use useEffect to render the things 
   useEffect(() => {
-    setTimeout(() => {
-      document.getElementById('head1').classList.toggle('show', true)
-      document.getElementById('head2').classList.toggle('show', true)
+    let timeout;
+
+    if (currentIndex < name.length) {
+      timeout = setTimeout(() => {
+        setCurrentText(prevText => prevText + name[currentIndex]);
+        setCurrentIndex(prevIndex => prevIndex + 1);
+      }, delay);
+    } else if (infinite) {
       setTimeout(() => {
-        document.getElementById('foot1').classList.toggle('show', true)
-        document.getElementById('foot2').classList.toggle('show', true)
-      }, 1500);
-    }, 500);
-  }, [])
+        setCurrentIndex(0);
+        setCurrentText('');
+      }, delay);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [currentIndex, delay, infinite, name]);
 
   return (
-    <div className='h-full pt-[12%] sm:pt-[12%] md:pt-[5%] lg:pt-[3%]'>
-      <div className='flex justify-center items-center h-[80%] pt-[7%] pb-[5%]'>
-        <div id="headContainer" className='w-7/12'>
-          <div className='text-center tracking-[5px] text-lg' id="head1">
-            HI I AM <div className='inline text-blue-500'>JEREMIAH ANKU COBLAH</div>
-          </div>
-          <div className='welcome text-center animate-charcter mb-10 mt-2' id="head2">
-            Introducing my portfolio
-          </div>
-          <div className='text-sm opacity-60 text-center tracking-[3px] text-pink-600' id='foot1'>
-           <span className='text-slate-400'>SOFTWARE</span> DEVELOPER
-            <br />
-            <div className='text-white tracking-widest mt-2'>
-            
-            </div>
-
-          </div>
-          <div className='flex gap-5 justify-center mt-5 text-[1vw]' id='foot2'>
-            <button id='btnText' onClick={()=>{window.location.href = "https://drive.google.com/file/d/17YFKflQxGggZ4ywoxQuwWSJmWmzgHQVN/view"}} className=' border border-2 rounded text-[1em] hover:bg-white hover:text-black flex gap-2'>
-              <BsFileEarmarkPdf className='  text-[1.4em]' />
-              <div>RESUME</div>
-            </button>
-            <button onClick={() => { window.location.href = "https://github.com/Jerry-Khobby" }} id='btnText' className='border border-2 rounded  text-[1em] hover:bg-white hover:text-black flex gap-2'>
-              <BsGithub className=' text-[1.4em]' /><div>
-                GITHUB</div></button>
-          </div>
-        </div>
+    <div className='h-full w-full px-4 sm:px-4 lg:px-48 md:px-36 flex flex-col items-start pb-10 mt-32'>
+      <div>
+        <h4 style={{ fontFamily: 'Fira Code' }} className='text-lg text-white font-semibold sm:text-2xl md:text-4xl lg:text-5xl'>
+          Hi 👋,my name is {currentText}
+        </h4>
       </div>
+      {/** I want to show an icon here that people can use to view my resume or go to my github account  */}
     </div>
-  )
+  );
 }
