@@ -12,7 +12,7 @@ const projects = [
     githubCode:"https://github.com/Jerry-Khobby/African-print-site",
   },
   {
-    name:'MEDICINE SHELF LIFE CHECKER',
+    name:'MEDICINE SHELF LIFE CHECKER-(RECENT PROJECT)',
     link:"https://mini-project-tau-peach.vercel.app/",
     description:"The Medicine Shelf Life Checker is a streamlined web application designed to help users easily determine the expiration dates of their medications. With a simple, user-friendly interface, it allows you to input the name and batch number of a medicine to quickly retrieve essential information about its shelf life. This tool ensures that you can manage your medications effectively, reducing the risk of using expired products and promoting better health practices. Ideal for both personal and professional use, this project exemplifies efficiency in healthcare management.",
     githubCode:"https://github.com/Jerry-Khobby/Mini-Project",

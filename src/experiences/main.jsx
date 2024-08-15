@@ -14,7 +14,7 @@ const ExperienceComponent = () => {
       </div>
     <div>
     {experience.map((index) => (
-        <div key={index} className='mt-5'>
+        <div key={index} className='mt-2'>
           <h5 className='text-lg text-white font-normal  list-item' style={{fontFamily:'Fira Code'}}>{index.role} - {index.company}</h5>
           <p className='text-sm text-gray-400 pt-2' style={{fontFamily:'Fira Code'}}>{index.duration}</p>
           <p className="text-sm font-light  text-white pt-5" style={{fontFamily:'Fira Code'}}>{index.description}</p>
@@ -26,7 +26,7 @@ const ExperienceComponent = () => {
       </div>
       <div>
       {leisure.map((index) => (
-        <div key={index} className='mt-5'>
+        <div key={index} className='mt-2'>
           <h5 className='text-lg text-white font-normal  list-item' style={{fontFamily:'Fira Code'}}>{index.title}</h5>
           <p className="text-sm font-light  text-white pt-5" style={{fontFamily:'Fira Code'}}>{index.description}</p>
         </div>

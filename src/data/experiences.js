@@ -31,17 +31,14 @@ const leisure = [
     title: "Keyboardist 🎹",
     description: 
     `As a skillful and dedicated keyboardist 🎹, I play for PENSA-KNUST ⛪, one of the largest and most vibrant student church bodies on campus. My role extends beyond simply playing the keyboard; I actively lead worship sessions 🙌, support the choir 🎶, and collaborate with other musicians to create a spiritually uplifting atmosphere during services.
-
-    I have mastered the art of playing the piano 🎼, enhancing the worship experience through dynamic and sensitive accompaniment. I am entrusted with playing during major events, including special services, conferences 🗣️, and outreach programs that gather thousands of students 👥.
-
-    My commitment to excellence in music ministry has helped me develop strong leadership 🏅, teamwork 🤝, and improvisational skills 🎵, as I often adapt to different worship styles and lead spontaneous praise sessions. Playing for PENSA-KNUST has also deepened my understanding of music’s role in spiritual growth 📈 and community building, making it a deeply rewarding experience both personally and for the church community at large.`
+    I have mastered the art of playing the piano 🎼, enhancing the worship experience through dynamic and sensitive accompaniment. I am entrusted with playing during major events, including special services, conferences , and outreach programs that gather thousands of students 👥.
+    My commitment to excellence in music ministry has helped me develop strong leadership 🏅, teamwork 🤝, and improvisational skills 🎵, as I often adapt to different worship styles and lead spontaneous praise sessions. Playing for PENSA-KNUST has also deepened my understanding of music’s role in spiritual growth  and community building, making it a deeply rewarding experience both personally and for the church community at large.`
   },
   {
     title: "Member of KINGS-VINE 🎶 (PENSA-KNUST)",
     description: 
-    `I am a proud member of KINGS-VINE 🎶, one of the most influential ministration bodies of PENSA-KNUST ⛪. KINGS-VINE is at the forefront of delivering powerful worship and praise ministrations during services, revivals, and major campus events 🎉. As part of this esteemed group, I contribute to shaping the worship experience for thousands of students 👥, fostering an atmosphere where people can deeply connect with their faith 🙏.
-
-    Whether playing in intimate worship sessions 🎹 or grand campus-wide services 🏛️, being part of KINGS-VINE has allowed me to grow both musically 🎵 and spiritually ✨. This platform sharpens my musical talents 🎼 and enhances my ability to minister through music, bringing joy 😊, peace ✌️, and encouragement 💪 to the congregation. Together, we inspire and uplift the church through a shared passion for worship and service.`
+    `I am a proud member of KINGS-VINE 🎶, one of the most influential ministration bodies of PENSA-KNUST ⛪. KINGS-VINE is at the forefront of delivering powerful worship and praise ministrations during services, revivals, and major campus events 🎉. As part of this esteemed group, I contribute to shaping the worship experience for thousands of students , fostering an atmosphere where people can deeply connect with their faith 🙏.
+    Whether playing in intimate worship sessions  or grand campus-wide services 🏛️, being part of KINGS-VINE has allowed me to grow both musically and spiritually ✨. This platform sharpens my musical talents  and enhances my ability to minister through music, bringing joy, peace ✌️, and encouragement 💪 to the congregation. Together, we inspire and uplift the church through a shared passion for worship and service.`
   }
 ];
 
