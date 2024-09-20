@@ -1,5 +1,5 @@
 import React from 'react'
-import {experience,leisure} from "../data/experiences";
+import {experience} from "../data/experiences";
 
 
 
@@ -25,12 +25,12 @@ const ExperienceComponent = () => {
         <h4 style={{fontFamily: 'Fira Code'}} className='text-lg mt-10 text-white underline'>Leisure </h4>
       </div>
       <div>
-      {leisure.map((index) => (
+{/*       {leisure.map((index) => (
         <div key={index} className='mt-2'>
           <h5 className='text-lg text-white font-normal  list-item' style={{fontFamily:'Fira Code'}}>{index.title}</h5>
           <p className="text-sm font-light  text-white pt-5" style={{fontFamily:'Fira Code'}}>{index.description}</p>
         </div>
-      ))}
+      ))} */}
       </div>
     </div>
   );

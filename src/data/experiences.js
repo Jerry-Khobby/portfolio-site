@@ -25,7 +25,7 @@ const experience = [
 
 
 
-
+/* 
 const leisure = [
   {
     title: "Keyboardist 🎹",
@@ -40,8 +40,8 @@ const leisure = [
     `I am a proud member of KINGS-VINE 🎶, one of the most influential ministration bodies of PENSA-KNUST ⛪. KINGS-VINE is at the forefront of delivering powerful worship and praise ministrations during services, revivals, and major campus events 🎉. As part of this esteemed group, I contribute to shaping the worship experience for thousands of students , fostering an atmosphere where people can deeply connect with their faith 🙏.
     Whether playing in intimate worship sessions  or grand campus-wide services 🏛️, being part of KINGS-VINE has allowed me to grow both musically and spiritually ✨. This platform sharpens my musical talents  and enhances my ability to minister through music, bringing joy, peace ✌️, and encouragement 💪 to the congregation. Together, we inspire and uplift the church through a shared passion for worship and service.`
   }
-];
+]; */
 
 
 
-export {leisure,experience};
+export {experience};
