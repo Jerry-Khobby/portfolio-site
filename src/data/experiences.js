@@ -19,7 +19,7 @@ const experience = [
     company: "Xcelsz",
     location: "Remote",
     role: "Agile Web Developer",
-    duration: "11/2023 - Present",
+    duration: "11/2023 - 12/2024",
     description:
       "Specializing in agile software development, delivering innovative solutions through collaborative and iterative approaches. Enhanced skills in agile development practices and methodologies. Utilized Git and GitHub for version control and collaboration. Developed frontends by interpreting Figma mockups.",
   },
