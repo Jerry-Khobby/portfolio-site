@@ -20,6 +20,15 @@
   }
 }
 
+@layer components {
+  /* 544px tile drawn at half size so it stays sharp on high-density screens */
+  .bg-paving {
+    background-image: url("./assets/paving-herringbone.png");
+    background-size: 272px 272px;
+    background-repeat: repeat;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

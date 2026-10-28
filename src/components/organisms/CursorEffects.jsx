@@ -21,7 +21,7 @@ const CursorEffects = () => {
       frame = null;
       const { x, y, hover } = point;
       const size = hover ? RING_HOVER : RING;
-      glow.style.background = `radial-gradient(600px circle at ${x}px ${y}px, rgba(29, 78, 216, 0.16), transparent 80%)`;
+      glow.style.background = `radial-gradient(600px circle at ${x}px ${y}px, rgba(29, 78, 216, 0.2), transparent 80%)`;
       ring.style.width = `${size}px`;
       ring.style.height = `${size}px`;
       ring.style.background = hover ? "rgba(94, 234, 212, 0.12)" : "transparent";

@@ -1,10 +1,15 @@
 import React from "react";
 import { CursorEffects } from "../organisms";
 
-// Full-height dark page with the pointer effects behind the content.
+// Full-height page on the herringbone paving, darkened towards the edges,
+// with the pointer effects behind the content.
 const PageShell = ({ children }) => (
-  <div className="relative min-h-screen bg-canvas text-body">
+  <div className="bg-paving relative min-h-screen bg-canvas text-body">
     <CursorEffects />
+    <div
+      aria-hidden="true"
+      className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_at_50%_40%,rgba(15,23,42,0)_35%,rgba(6,10,22,0.6)_100%)]"
+    />
     <div className="relative z-[1]">{children}</div>
   </div>
 );
