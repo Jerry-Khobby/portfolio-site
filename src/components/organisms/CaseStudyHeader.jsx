@@ -8,7 +8,7 @@ const CaseStudyHeader = ({ title, summary, meta }) => (
   <header>
     <Link
       to="/"
-      className="inline-flex min-h-[44px] items-center gap-2 font-semibold text-accent hover:text-heading"
+      className="inline-flex min-h-[44px] items-center gap-2 font-semibold text-accent hover:text-accent"
     >
       <FiArrowLeft className="h-4 w-4" aria-hidden="true" />
       {profile.name}

@@ -11,9 +11,11 @@ const SikaTrackPage = () => {
     document.title = `${sikatrack.title} · ${profile.name}`;
   }, []);
 
+  const sectionProps = { spacing: "pt-16", headingGap: "mb-5" };
+
   return (
     <CaseStudyLayout header={<CaseStudyHeader {...sikatrack} />}>
-      <ContentSection title="The problem" spacing="pt-16">
+      <ContentSection title="The problem" {...sectionProps}>
         <p className="m-0">
           Most everyday money in Ghana moves through mobile money. Budgeting apps like Mint
           and YNAB connect to banks, so they can't see it, and typing every payment in by
@@ -27,19 +29,19 @@ const SikaTrackPage = () => {
         </p>
       </ContentSection>
 
-      <ContentSection title="How it fits together" spacing="pt-16">
+      <ContentSection title="How it fits together" {...sectionProps}>
         <FlowDiagram {...sikatrack.flow} />
       </ContentSection>
 
-      <ContentSection title="The three layers" spacing="pt-16">
+      <ContentSection title="The three layers" {...sectionProps}>
         <LayersList layers={sikatrack.layers} />
       </ContentSection>
 
-      <ContentSection title="Decisions" spacing="pt-16">
+      <ContentSection title="Decisions" {...sectionProps}>
         <DecisionsList decisions={sikatrack.decisions} />
       </ContentSection>
 
-      <ContentSection title="Where it stands" spacing="pt-16">
+      <ContentSection title="Where it stands" {...sectionProps}>
         <ProgressList items={sikatrack.progress} repo={sikatrack.repo} />
       </ContentSection>
     </CaseStudyLayout>

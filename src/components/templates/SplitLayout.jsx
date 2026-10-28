@@ -7,7 +7,7 @@ const SplitLayout = ({ sidebar, children }) => (
   <PageShell>
     <div className="mx-auto flex max-w-[1280px] flex-wrap gap-x-16 px-6">
       {sidebar}
-      <main className="min-w-0 flex-[999_1_560px] pb-24 lg:pt-12">{children}</main>
+      <main className="min-w-0 flex-[999_1_560px] pb-24 pt-12">{children}</main>
     </div>
   </PageShell>
 );

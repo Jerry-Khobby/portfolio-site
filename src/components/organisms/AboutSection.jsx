@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Highlight } from "../atoms";
 import { ContentSection } from "../molecules";
 
@@ -24,10 +23,8 @@ const AboutSection = () => (
         I studied Computer Science at <Highlight>KNUST</Highlight>, where my final-year
         project put a CNN-LSTM sepsis model behind a FastAPI service with SHAP
         explanations. In the evenings I'm building <Highlight>Seatline</Highlight> and{" "}
-        <Link to="/projects/sikatrack" className="font-medium">
-          SikaTrack
-        </Link>
-        , two products for how Ghana actually travels and pays.
+        <Highlight>SikaTrack</Highlight>, two products for how Ghana actually travels and
+        pays.
       </p>
     </div>
   </ContentSection>
