@@ -1,22 +1,93 @@
-const projects = [
+// `href` is the external repo or demo; `caseStudy` is an internal route.
+const currentProjects = [
   {
-    name: "WORKERS ATTENDANCE SYSTEM",
-    link: "https://github.com/Jerry-Khobby/workers-attendance-management-system",  // Replace with your actual deployment link
-    githubCode: "https://github.com/Jerry-Khobby/workers-attendance-management-system",  // Replace with your GitHub repository link
-    description: "A robust Workers Attendance Management system designed to streamline the process of tracking employee attendance in a company. Built with React for the frontend and Django Rest Framework for the backend, this application allows administrators to manage and monitor worker attendance efficiently. Key features include real-time attendance tracking, detailed attendance reports, and an intuitive user interface for easy navigation. The system also supports data visualization to help administrators quickly identify attendance patterns and trends.",
+    title: "SikaTrack",
+    caseStudy: "/projects/sikatrack",
+    href: "",
+    thumb: "MoMo SMS\n→ FastAPI\n→ Airflow\n→ star schema",
+    blurb:
+      "A budgeting app for mobile-money users. It reads the MoMo SMS already on your phone, turns each one into a categorised transaction, spots recurring charges and tracks budgets, with nothing typed by hand.",
+    status:
+      "Backend, pipeline and CI are running; the Android app has launch and sign-in done, main tabs next.",
+    tags: ["FastAPI", "Airflow", "PostgreSQL", "Expo", "Docker", "Metabase"],
   },
   {
-    name:"AFRICAN CLOTH SELLING SITE",
-    link:"https://african-print-site.vercel.app/",
-    description:"This is an e-commerce website built to faciliate the selling of African Cloth. The system was built using Nextjs framework and Mongodb as the Database. Paystack was used to facililate of payment",
-    githubCode:"https://github.com/Jerry-Khobby/African-print-site",
+    title: "Seatline",
+    caseStudy: "",
+    href: "",
+    thumb: "GR 4471-24\nAccra → Kumasi\nBay 6 · loading\nSeat B3 held",
+    blurb:
+      "Online booking for intercity buses in Ghana: see which bus is loading, pick a seat on a live map, pay with mobile money and board with a QR ticket. Agents and operators run the station from the same system.",
+    status:
+      "22 screens designed and the React frontend built; NestJS API, server-owned seat holds and Paystack next.",
+    tags: ["React", "TypeScript", "NestJS", "Prisma", "Socket.IO", "Paystack"],
   },
-  {
-    name:'MEDICINE SHELF LIFE CHECKER-(RECENT PROJECT)',
-    link:"https://mini-project-tau-peach.vercel.app/",
-    description:"The Medicine Shelf Life Checker is a streamlined web application designed to help users easily determine the expiration dates of their medications. With a simple, user-friendly interface, it allows you to input the name and batch number of a medicine to quickly retrieve essential information about its shelf life. This tool ensures that you can manage your medications effectively, reducing the risk of using expired products and promoting better health practices. Ideal for both personal and professional use, this project exemplifies efficiency in healthcare management.",
-    githubCode:"https://github.com/Jerry-Khobby/Mini-Project",
-  }
 ];
 
-export default projects;
+const projects = [
+  {
+    title: "CampusBid",
+    context: "Campus marketplace backend",
+    href: "",
+    thumb: "10+ modules\nescrow payments\n167 tests\n14 suites",
+    blurb:
+      "NestJS backend with an escrow-style Paystack flow, real-time chat over WebSockets and Redis caching, plus a Next.js frontend. Covered by 167 Jest unit tests and documented with Swagger.",
+    tags: ["NestJS", "MongoDB", "Redis", "Socket.IO", "Paystack", "Jest"],
+  },
+  {
+    title: "Sepsis Prediction API",
+    context: "AI-integrated clinical backend",
+    href: "",
+    thumb: "POST /predict\n→ CNN-LSTM\n→ risk + SHAP",
+    blurb:
+      "FastAPI service around a live CNN-LSTM model with manual and batch prediction, SHAP explanations on every result, and a Next.js dashboard for CSV upload and reports.",
+    tags: ["FastAPI", "TensorFlow", "SHAP", "SQLAlchemy", "Next.js"],
+  },
+  {
+    title: "Office Management System",
+    context: "AmaliTech · enterprise data and API",
+    href: "",
+    thumb: "badge events\n→ ETL\n→ 50+ views\n→ RBAC API",
+    blurb:
+      "Multi-tenant schema across 10+ business domains, an attendance ETL from badge-reader events, seat-availability and no-show services, and role-specific KPI views.",
+    tags: ["PostgreSQL", "SQL Views", "ETL", "REST", "RBAC"],
+  },
+  {
+    title: "Music Streaming Pipeline",
+    context: "Event-driven AWS",
+    href: "",
+    thumb: "S3 → EventBridge\n→ SQS → Step Fn\n→ Glue",
+    blurb:
+      "Ingests simulated streaming events and computes genre-level listening metrics in Glue, with CloudWatch logging, Slack alerts and Terraform-managed infrastructure.",
+    tags: ["AWS Glue", "PySpark", "Step Functions", "Terraform"],
+  },
+  {
+    title: "E-commerce Lakehouse",
+    context: "Delta Lake on AWS",
+    href: "",
+    thumb: "S3\n→ quality checks\n→ Delta tables",
+    blurb:
+      "Loads transaction data into Delta Lake with Glue and PySpark after null, timestamp and duplicate checks, logging rejected records. Orchestrated by Step Functions with CI in GitHub Actions.",
+    tags: ["Delta Lake", "PySpark", "Glue", "GitHub Actions"],
+  },
+  {
+    title: "Heartbeat Monitoring",
+    context: "Real-time streaming",
+    href: "",
+    thumb: "Kafka\n→ Spark Streaming\n→ Postgres\n→ Grafana",
+    blurb:
+      "Streams simulated heart-rate events through Kafka and Spark Structured Streaming, validates them and stores them in PostgreSQL, with live Grafana dashboards in Docker Compose.",
+    tags: ["Kafka", "Spark", "PostgreSQL", "Grafana", "Docker"],
+  },
+  {
+    title: "Collaborative Whiteboard",
+    context: "Real-time backend",
+    href: "",
+    thumb: "rooms\ndraw events\nthrottled\n60 FPS",
+    blurb:
+      "Canvas rooms and draw-event broadcasting on NestJS and Socket.IO, with input throttling that holds 60 FPS under load, wired to a Next.js frontend.",
+    tags: ["NestJS", "Socket.IO", "MongoDB", "Next.js"],
+  },
+];
+
+export { currentProjects, projects };
