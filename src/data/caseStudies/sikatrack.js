@@ -2,7 +2,7 @@ const sikatrack = {
   title: "SikaTrack",
   summary:
     "A personal-finance tracker built from the mobile-money SMS already on your phone.",
-  repo: "",
+  repo: "https://github.com/Jerry-Khobby/SikaTrack",
   meta: [
     { label: "Role", value: "Sole engineer" },
     { label: "Status", value: "In progress", inProgress: true },
