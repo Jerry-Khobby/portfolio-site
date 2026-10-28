@@ -1,29 +1,26 @@
-import './App.css';
-import React from 'react'
-import HomeComponent from './components/Home/main';
-import About from './components/About/main';
-import NavbarComponent from './components/Navbar/main';
-import "../src/font/FiraCode-Light.ttf";
-import ExperienceComponent from './experiences/main';
-import ProjectsComponent from './components/Projects/main';
-import SkillsComponent from './components/skills/main';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import ContactComponent from './components/contact/main';
+import React, { useEffect } from "react";
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { HomePage, SikaTrackPage } from "./components/pages";
 
+// Start each new page at the top, unless the URL points at a section.
+const ScrollToTop = () => {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (!hash) window.scrollTo(0, 0);
+  }, [pathname, hash]);
+  return null;
+};
 
 function App() {
-
   return (
-    <div className="App">
-        <NavbarComponent/>
-      <HomeComponent/> 
-     <About/> 
-     <ExperienceComponent/> 
-     <ProjectsComponent/>
-     <SkillsComponent/>
-     <ContactComponent/>
-    </div>
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects/sikatrack" element={<SikaTrackPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
