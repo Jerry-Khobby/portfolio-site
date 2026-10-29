@@ -45,12 +45,12 @@ const projects = [
   },
   {
     title: "Office Management System",
-    context: "AmaliTech · enterprise data and API",
+    context: "AmaliTech · internal enterprise backend",
     href: "",
     thumb: "badge events\n→ ETL\n→ 50+ views\n→ RBAC API",
     blurb:
-      "Multi-tenant schema across 10+ business domains, an attendance ETL from badge-reader events, seat-availability and no-show services, and role-specific KPI views.",
-    tags: ["PostgreSQL", "SQL Views", "ETL", "REST", "RBAC"],
+      "Multi-tenant schema across 10+ business domains, an attendance ETL that turns badge-reader events into daily status and punctuality records, seat-availability and no-show services, and 50+ role-specific endpoints with RBAC, auth guards and pagination.",
+    tags: ["Java", "PostgreSQL", "SQL Views", "ETL", "JWT", "RBAC"],
   },
   {
     title: "Music Streaming Pipeline",
