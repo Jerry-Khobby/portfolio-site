@@ -68,8 +68,9 @@
     background-repeat: repeat;
   }
 
+  /* Same tile recoloured to the mist palette (bricks, grout and bevels kept) */
   :root[data-theme="light"] .bg-paving {
-    background-image: none;
+    background-image: url("./assets/paving-herringbone-light.png");
   }
 }
 
