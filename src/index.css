@@ -23,22 +23,23 @@
     color-scheme: dark;
   }
 
+  /* Soft blue-grey "mist" rather than pure white, to keep glare down */
   :root[data-theme="light"] {
-    --c-canvas: 255 255 255;
-    --c-panel: 248 250 252;
-    --c-tile: 248 250 252;
-    --c-tile-hover: 241 245 249;
-    --c-line: 226 232 240;
-    --c-line-strong: 203 213 225;
-    --c-muted: 148 163 184;
+    --c-canvas: 236 240 244;
+    --c-panel: 226 232 239;
+    --c-tile: 226 232 239;
+    --c-tile-hover: 214 222 231;
+    --c-line: 211 219 228;
+    --c-line-strong: 184 194 207;
+    --c-muted: 120 133 150;
     --c-body: 71 85 105;
     --c-soft: 51 65 85;
-    --c-heading: 15 23 42;
+    --c-heading: 30 41 59;
     --c-accent: 15 118 110;
     --c-accent-tint: 13 148 136;
     --c-progress: 180 83 9;
-    --c-glow: 20 184 166;
-    --glow-alpha: 0.07;
+    --c-glow: 59 130 246;
+    --glow-alpha: 0.06;
     color-scheme: light;
   }
 
