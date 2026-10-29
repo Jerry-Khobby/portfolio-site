@@ -11,7 +11,7 @@ const links = [
 ];
 
 const SocialLinks = () => (
-  <ul aria-label="Links" className="m-0 mt-12 flex list-none items-center gap-2 p-0 lg:short:mt-6">
+  <ul aria-label="Links" className="m-0 -ml-2.5 mt-8 flex list-none items-center gap-2 p-0 lg:mt-12 lg:short:mt-6 lg:tiny:mt-3">
     {links
       .filter((link) => link.href)
       .map((link) => (

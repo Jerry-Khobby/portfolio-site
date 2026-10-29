@@ -4,7 +4,7 @@ import { CursorEffects } from "../organisms";
 // Full-height page on the herringbone paving, darkened towards the edges,
 // with the pointer effects behind the content.
 const PageShell = ({ children }) => (
-  <div className="bg-paving relative min-h-screen bg-canvas text-body">
+  <div className="bg-paving relative min-h-screen overflow-x-clip bg-canvas text-body">
     <CursorEffects />
     <div
       aria-hidden="true"

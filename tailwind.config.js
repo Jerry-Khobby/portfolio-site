@@ -6,6 +6,7 @@ module.exports = {
       screens: {
         // Laptop-height viewports, where the sticky sidebar needs tighter spacing
         short: { raw: "(max-height: 900px)" },
+        tiny: { raw: "(max-height: 720px)" },
       },
       colors: {
         canvas: "#0F172A",
