@@ -6,4 +6,5 @@ export { default as NavLink } from "./NavLink";
 export { default as SectionHeading } from "./SectionHeading";
 export { default as StatusBadge } from "./StatusBadge";
 export { default as Tag } from "./Tag";
+export { default as ThemeToggle } from "./ThemeToggle";
 export { default as ToolTile } from "./ToolTile";

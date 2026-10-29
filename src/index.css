@@ -3,6 +3,45 @@
 @tailwind utilities;
 
 @layer base {
+  /* Theme colours as "R G B" triplets, consumed by tailwind.config.js */
+  :root {
+    --c-canvas: 15 23 42;
+    --c-panel: 17 28 51;
+    --c-tile: 26 36 56;
+    --c-tile-hover: 34 48 74;
+    --c-line: 30 41 59;
+    --c-line-strong: 51 65 85;
+    --c-muted: 100 116 139;
+    --c-body: 148 163 184;
+    --c-soft: 203 213 225;
+    --c-heading: 226 232 240;
+    --c-accent: 94 234 212;
+    --c-accent-tint: 45 212 191;
+    --c-progress: 252 211 77;
+    --c-glow: 29 78 216;
+    --glow-alpha: 0.2;
+    color-scheme: dark;
+  }
+
+  :root[data-theme="light"] {
+    --c-canvas: 255 255 255;
+    --c-panel: 248 250 252;
+    --c-tile: 248 250 252;
+    --c-tile-hover: 241 245 249;
+    --c-line: 226 232 240;
+    --c-line-strong: 203 213 225;
+    --c-muted: 148 163 184;
+    --c-body: 71 85 105;
+    --c-soft: 51 65 85;
+    --c-heading: 15 23 42;
+    --c-accent: 15 118 110;
+    --c-accent-tint: 13 148 136;
+    --c-progress: 180 83 9;
+    --c-glow: 20 184 166;
+    --glow-alpha: 0.07;
+    color-scheme: light;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -26,6 +65,10 @@
     background-image: url("./assets/paving-herringbone.png");
     background-size: 272px 272px;
     background-repeat: repeat;
+  }
+
+  :root[data-theme="light"] .bg-paving {
+    background-image: none;
   }
 }
 

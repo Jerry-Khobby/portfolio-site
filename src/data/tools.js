@@ -74,10 +74,10 @@ import {
   TbSql,
 } from "react-icons/tb";
 
-// Brand colours, except where the official colour is too dark for the
-// tiles; those use a lighter tint. Tools without an official logo in
-// react-icons use a descriptive Tabler icon instead.
-const LIGHT = "#E2E8F0";
+// Brand colours, except monochrome logos, which follow the theme's heading
+// colour so they stay visible on dark and light tiles. Tools without an
+// official logo in react-icons use a descriptive Tabler icon instead.
+const LIGHT = "rgb(var(--c-heading))";
 
 const toolGroups = [
   {
@@ -90,7 +90,7 @@ const toolGroups = [
       { name: "C++", icon: SiCplusplus, color: "#6295CB" },
       { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
       { name: "CSS3", icon: SiCss3, color: "#2965F1" },
-      { name: "SQL", icon: TbSql, color: "#5EEAD4" },
+      { name: "SQL", icon: TbSql, color: "rgb(var(--c-accent))" },
     ],
   },
   {

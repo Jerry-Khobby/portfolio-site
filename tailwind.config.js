@@ -1,4 +1,9 @@
 /** @type {import('tailwindcss').Config} */
+
+// Colours come from CSS variables (see src/index.css) so the theme can switch
+// between dark and light; `<alpha-value>` keeps modifiers like `bg-line/55` working.
+const token = (name) => `rgb(var(--c-${name}) / <alpha-value>)`;
+
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
@@ -9,16 +14,16 @@ module.exports = {
         tiny: { raw: "(max-height: 720px)" },
       },
       colors: {
-        canvas: "#0F172A",
-        panel: "#111C33",
-        tile: { DEFAULT: "#1A2438", hover: "#22304A" },
-        line: { DEFAULT: "#1E293B", strong: "#334155" },
-        muted: "#64748B",
-        body: "#94A3B8",
-        soft: "#CBD5E1",
-        heading: "#E2E8F0",
-        accent: { DEFAULT: "#5EEAD4", tint: "rgba(45, 212, 191, 0.1)" },
-        progress: "#FCD34D",
+        canvas: token("canvas"),
+        panel: token("panel"),
+        tile: { DEFAULT: token("tile"), hover: token("tile-hover") },
+        line: { DEFAULT: token("line"), strong: token("line-strong") },
+        muted: token("muted"),
+        body: token("body"),
+        soft: token("soft"),
+        heading: token("heading"),
+        accent: { DEFAULT: token("accent"), tint: "rgb(var(--c-accent-tint) / 0.1)" },
+        progress: token("progress"),
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
@@ -32,5 +37,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    ({ addVariant }) => addVariant("light", ':root[data-theme="light"] &'),
+  ],
 };

@@ -13,7 +13,7 @@ const CursorEffects = () => {
 
     const paint = () => {
       frame = null;
-      glow.style.background = `radial-gradient(600px circle at ${point.x}px ${point.y}px, rgba(29, 78, 216, 0.2), transparent 80%)`;
+      glow.style.background = `radial-gradient(600px circle at ${point.x}px ${point.y}px, rgb(var(--c-glow) / var(--glow-alpha)), transparent 80%)`;
     };
 
     const onMove = (e) => {
