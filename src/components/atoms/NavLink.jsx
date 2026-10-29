@@ -6,7 +6,7 @@ const NavLink = ({ href, active, children, onClick }) => (
     href={href}
     onClick={onClick}
     aria-current={active ? "true" : undefined}
-    className="group inline-flex min-h-[44px] items-center gap-4"
+    className="group inline-flex min-h-[44px] items-center gap-4 lg:short:min-h-[36px]"
   >
     <span
       className={`h-px transition-all duration-200 group-hover:w-16 group-hover:bg-heading ${

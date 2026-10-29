@@ -4,7 +4,7 @@ import { ButtonLink } from "../atoms";
 import { cvs } from "../../data/profile";
 
 const CvDownloads = () => (
-  <div className="mt-7 flex flex-wrap gap-2.5">
+  <div className="mt-7 flex flex-wrap gap-2.5 lg:short:mt-5">
     {cvs.map(({ label, href, primary }) => (
       <ButtonLink
         key={label}

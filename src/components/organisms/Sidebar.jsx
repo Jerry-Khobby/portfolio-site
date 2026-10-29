@@ -3,7 +3,9 @@ import { CvDownloads, SectionNav, SocialLinks } from "../molecules";
 import { profile } from "../../data/profile";
 
 const Sidebar = ({ nav, active, onSelect }) => (
-  <header className="min-w-0 flex-[1_1_420px] py-12 lg:sticky lg:top-0 lg:flex lg:h-screen lg:flex-col lg:justify-between lg:py-24">
+  // On desktop the sidebar is pinned at viewport height; if its content is
+  // still taller than a short screen, it scrolls on its own.
+  <header className="min-w-0 flex-[1_1_420px] py-12 lg:sticky lg:top-0 lg:flex lg:h-screen lg:flex-col lg:justify-between lg:overflow-y-auto lg:py-24 lg:[scrollbar-width:thin] lg:short:py-10">
     <div>
       <h1 className="m-0 text-[clamp(38px,4.4vw,52px)] font-bold leading-[1.08] tracking-[-0.025em] text-heading">
         <a href="#about" className="text-heading">

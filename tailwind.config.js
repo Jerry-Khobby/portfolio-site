@@ -3,6 +3,10 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      screens: {
+        // Laptop-height viewports, where the sticky sidebar needs tighter spacing
+        short: { raw: "(max-height: 900px)" },
+      },
       colors: {
         canvas: "#0F172A",
         panel: "#111C33",
