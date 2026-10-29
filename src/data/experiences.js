@@ -20,8 +20,8 @@ const experience = [
     role: "Back End Developer Intern",
     org: "Ideation Axis Group",
     where: "Remote",
-    body: "Backend development as part of a distributed engineering team.",
-    tags: ["Backend", "REST"],
+    body: "Built REST APIs in Node.js and Express on MongoDB for user and product management, with input validation, bcrypt password hashing, pagination, filtering, sorting and rate-limited sign-ups.",
+    tags: ["Node.js", "Express", "MongoDB", "Mongoose", "REST APIs"],
   },
   {
     when: "Nov 2023 — Oct 2024",
