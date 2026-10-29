@@ -6,7 +6,7 @@ const ToolsSection = () => (
   <ContentSection
     id="tools"
     title="Tools & technologies"
-    intro="What I build with day to day. Hover over a logo to see its name."
+    intro="What I build with day to day. Hover over or tap a logo to see its name."
   >
     <div className="flex flex-col gap-8">
       {toolGroups.map((group) => (

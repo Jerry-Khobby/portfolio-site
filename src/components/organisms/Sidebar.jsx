@@ -9,9 +9,7 @@ const Sidebar = ({ nav, active, onSelect }) => (
   <header className="min-w-0 flex-[1_1_440px] py-12 lg:sticky lg:top-0 lg:flex lg:h-screen lg:flex-col lg:justify-between lg:overflow-y-auto lg:py-24 lg:short:py-10 lg:tiny:py-7lg:[scrollbar-width:none] lg:[&::-webkit-scrollbar]:hidden">
     <div>
       <h1 className="m-0 text-[clamp(38px,4.4vw,52px)] lg:tiny:text-[40px] font-bold leading-[1.08] tracking-[-0.025em] text-heading">
-        <a href="#about" className="text-heading">
-          {profile.name}
-        </a>
+        {profile.name}
       </h1>
       <p className="m-0 mt-3.5 text-xl font-medium tracking-[-0.01em] text-heading">
         {profile.title}

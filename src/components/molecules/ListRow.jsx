@@ -1,18 +1,23 @@
 import React from "react";
 
 // Two-column list entry: a narrow aside (date, thumbnail, folder) and the content.
-// Rows highlight on hover; descendants can react with `group-hover:`.
-const ListRow = ({ aside, children, gap = "gap-x-6 gap-y-2" }) => (
+// Only `interactive` rows (ones whose title is a link) react to hover; the title
+// link is stretched over the whole row so the entire card is clickable.
+const ListRow = ({ aside, children, interactive = false, gap = "gap-x-6 gap-y-2" }) => (
   <li
-    className={`group -mx-5 flex flex-wrap rounded-lg p-5 transition-colors duration-200 hover:bg-line/55 ${gap}`}
+    className={`-mx-5 flex flex-wrap rounded-lg p-5 ${gap} ${
+      interactive
+        ? "group relative transition-colors duration-200 hover:bg-line/55 has-[a:focus-visible]:bg-line/55 has-[a:focus-visible]:ring-1 has-[a:focus-visible]:ring-accent/60"
+        : ""
+    }`}
   >
-    <div className="shrink-0 basis-[140px]">{aside}</div>
+    <div className="min-w-0 shrink-0 basis-[148px]">{aside}</div>
     <div className="min-w-0 flex-[1_1_300px]">{children}</div>
   </li>
 );
 
 const RowDate = ({ children }) => (
-  <div className="pt-0.5 text-xs font-semibold uppercase tracking-[0.06em] text-body">
+  <div className="whitespace-nowrap pt-0.5 text-xs font-semibold uppercase tracking-[0.04em] text-body">
     {children}
   </div>
 );
@@ -23,22 +28,16 @@ const RowTitle = ({ children }) => (
   </h3>
 );
 
-const RowTitleText = ({ href, external = false, children }) => {
-  const className = "text-heading transition-colors group-hover:text-accent";
-  if (!href) return <span className={className}>{children}</span>;
-  return (
-    <a
-      href={href}
-      className={className}
-      {...(external && { target: "_blank", rel: "noreferrer" })}
-    >
-      {children}
-    </a>
-  );
-};
+const RowTitleText = ({ children }) => <span className="text-heading">{children}</span>;
+
+// Classes for a title link inside an interactive row: the ::after overlay
+// covers the row, so clicking anywhere on it follows the link.
+const rowLinkClass =
+  "inline-flex items-center gap-1 text-heading outline-none transition-colors after:absolute after:inset-0 after:rounded-lg after:content-[''] group-hover:text-accent";
 
 ListRow.Date = RowDate;
 ListRow.Title = RowTitle;
 ListRow.TitleText = RowTitleText;
+ListRow.linkClass = rowLinkClass;
 
 export default ListRow;

@@ -9,7 +9,7 @@ const SiteFooter = () => (
         {profile.email}
       </a>{" "}
       or{" "}
-      <a href={`tel:${profile.phone}`} className="font-medium">
+      <a href={`tel:${profile.phone}`} className="whitespace-nowrap font-medium">
         {profile.phoneDisplay}
       </a>
       . {profile.availability}

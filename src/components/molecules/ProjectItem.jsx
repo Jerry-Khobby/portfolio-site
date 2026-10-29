@@ -5,33 +5,33 @@ import { CodeThumb, StatusBadge } from "../atoms";
 import ListRow from "./ListRow";
 import TagList from "./TagList";
 
-const titleClass = "text-heading transition-colors group-hover:text-accent";
+const Arrow = () => (
+  <FiArrowUpRight
+    className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transition-none"
+    aria-hidden="true"
+  />
+);
 
 // Internal case studies use the router; external repos open in a new tab.
 const ProjectTitle = ({ title, caseStudy, href }) => {
   if (caseStudy) {
     return (
-      <Link to={caseStudy} className={`inline-flex items-center gap-1 ${titleClass}`}>
+      <Link to={caseStudy} className={ListRow.linkClass}>
         {title}
-        <FiArrowUpRight className="h-4 w-4" aria-hidden="true" />
+        <Arrow />
       </Link>
     );
   }
   if (href) {
     return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noreferrer"
-        className={`inline-flex items-center gap-1 ${titleClass}`}
-      >
+      <a href={href} target="_blank" rel="noreferrer" className={ListRow.linkClass}>
         {title}
-        <FiArrowUpRight className="h-4 w-4" aria-hidden="true" />
+        <Arrow />
         <span className="sr-only">(opens in a new tab)</span>
       </a>
     );
   }
-  return <span className={titleClass}>{title}</span>;
+  return <ListRow.TitleText>{title}</ListRow.TitleText>;
 };
 
 const ProjectItem = ({
@@ -45,7 +45,11 @@ const ProjectItem = ({
   tags,
   inProgress = false,
 }) => (
-  <ListRow aside={<CodeThumb>{thumb}</CodeThumb>} gap="gap-x-6 gap-y-4">
+  <ListRow
+    aside={<CodeThumb>{thumb}</CodeThumb>}
+    gap="gap-x-6 gap-y-4"
+    interactive={Boolean(caseStudy || href)}
+  >
     <ListRow.Title>
       <ProjectTitle title={title} caseStudy={caseStudy} href={href} />
       {inProgress && <StatusBadge />}
