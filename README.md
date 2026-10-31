@@ -21,7 +21,7 @@ src/
 │   ├── molecules/   small groups of atoms: ListRow, ProjectItem, SocialLinks, ...
 │   ├── organisms/   page sections: Sidebar, ExperienceSection, ToolsSection, ...
 │   ├── templates/   page layouts: SplitLayout, CaseStudyLayout
-│   └── pages/       routes: HomePage, SikaTrackPage
+│   └── pages/       routes: HomePage, CaseStudyPage
 ├── data/            all site content (profile, experience, projects, tools, ...)
 └── hooks/           useScrollSpy
 ```
@@ -31,7 +31,7 @@ Content lives in `src/data`, so most updates never touch a component:
 - `profile.js`: name, contact details, social links and CV files
 - `experiences.js`, `projects.js`, `education.js`: the home page lists
 - `tools.js`: technology logos (from `react-icons`) and brand colours
-- `caseStudies/`: long-form project pages
+- `caseStudies/`: long-form project pages, one file per project, written as typed sections (add a file and register it in `caseStudies/index.js` to get a new `/projects/<slug>` page)
 
 Design tokens (colours, fonts) are defined in `tailwind.config.js`.
 
@@ -40,6 +40,7 @@ Design tokens (colours, fonts) are defined in `tailwind.config.js`.
 | Path | Page |
 | --- | --- |
 | `/` | Home |
+| `/projects/seatline` | Seatline case study |
 | `/projects/sikatrack` | SikaTrack case study |
 
 The site uses client-side routing, so the host must serve `index.html` for unknown paths.
