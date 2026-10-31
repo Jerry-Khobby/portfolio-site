@@ -1,13 +1,14 @@
+import campusbidShot from "../assets/projects/campusbid.jpg";
 import seatlineShot from "../assets/projects/seatline.jpg";
 
-// `href` is the live site or repo the title links to; `repo` adds a separate
-// "Source code" link when `href` is a live site; `caseStudy` is an internal
-// route; `image` replaces the text thumbnail with a screenshot.
+// Links: `caseStudy` (internal route), `live` (deployed site) and `repo`.
+// The title opens the first of those that exists; the others are listed
+// under the description. `image` replaces the text thumbnail with a screenshot.
 const currentProjects = [
   {
     title: "SikaTrack",
     caseStudy: "/projects/sikatrack",
-    href: "https://github.com/Jerry-Khobby/SikaTrack",
+    repo: "https://github.com/Jerry-Khobby/SikaTrack",
     thumb: "MoMo SMS\n→ FastAPI\n→ Airflow\n→ star schema",
     blurb:
       "A budgeting app for mobile-money users. It reads the MoMo SMS already on your phone, turns each one into a categorised transaction, spots recurring charges and tracks budgets, with nothing typed by hand.",
@@ -20,27 +21,29 @@ const currentProjects = [
 const projects = [
   {
     title: "Seatline",
-    context: "Live · intercity bus booking for Ghana",
-    href: "https://ghana-bus-booking.vercel.app/",
+    context: "Live · full-stack bus booking platform for Ghana",
+    caseStudy: "/projects/seatline",
+    live: "https://ghana-bus-booking.vercel.app",
     repo: "https://github.com/Jerry-Khobby/ghana-bus-booking",
     image: seatlineShot,
     blurb:
-      "See which bus is loading, pick a seat on a live seat map, pay with mobile money and board with a QR ticket. Station agents sell walk-in seats and scan tickets, and operators manage trips, buses and seat layouts, all in one system. 22 screens, seats held on the server, and live updates over Server-Sent Events.",
-    tags: ["React", "TypeScript", "NestJS", "PostgreSQL", "Prisma", "Paystack", "Tailwind CSS"],
+      "Book intercity bus seats in Ghana: separate apps for passengers, station agents and operators, for buses that leave on time or when full. A NestJS and PostgreSQL API (79 endpoints, 22 tables) where two people can never take the same seat, Paystack mobile money with signed webhooks, HMAC-signed QR tickets and live updates over Server-Sent Events, covered by 250+ automated tests.",
+    tags: ["TypeScript", "NestJS", "React", "PostgreSQL", "Prisma", "Paystack", "Docker"],
   },
   {
     title: "CampusBid",
-    context: "Campus marketplace backend",
-    href: "https://github.com/Jerry-Khobby/campus-bid-backend-web-app",
-    thumb: "10+ modules\nescrow payments\n167 tests\n14 suites",
+    context: "Live · campus marketplace",
+    live: "https://campusbid-ecommerce-frontend-web-ap.vercel.app/home",
+    repo: "https://github.com/Jerry-Khobby/campus-bid-backend-web-app",
+    image: campusbidShot,
     blurb:
-      "NestJS backend with an escrow-style Paystack flow, real-time chat over WebSockets and Redis caching, plus a Next.js frontend. Covered by 167 Jest unit tests and documented with Swagger.",
+      "A marketplace where students buy from vendors on campus. NestJS backend with 10+ modules, an escrow-style Paystack flow, real-time chat over WebSockets and Redis caching, plus a Next.js frontend. Covered by 167 Jest unit tests across 14 suites and documented with Swagger.",
     tags: ["NestJS", "MongoDB", "Redis", "Socket.IO", "Paystack", "Jest"],
   },
   {
     title: "Sepsis Prediction API",
     context: "AI-integrated clinical backend",
-    href: "https://github.com/Jerry-Khobby/early-prediction-sepsis-backend",
+    repo: "https://github.com/Jerry-Khobby/early-prediction-sepsis-backend",
     thumb: "POST /predict\n→ CNN-LSTM\n→ risk + SHAP",
     blurb:
       "FastAPI service around a live CNN-LSTM model with manual and batch prediction, SHAP explanations on every result, and a Next.js dashboard for CSV upload and reports.",
@@ -49,7 +52,6 @@ const projects = [
   {
     title: "Office Management System",
     context: "AmaliTech · internal enterprise backend",
-    href: "",
     thumb: "badge events\n→ ETL\n→ 50+ views\n→ RBAC API",
     blurb:
       "Multi-tenant schema across 10+ business domains, an attendance ETL that turns badge-reader events into daily status and punctuality records, seat-availability and no-show services, and 50+ role-specific endpoints with RBAC, auth guards and pagination.",
@@ -58,7 +60,7 @@ const projects = [
   {
     title: "Music Streaming Pipeline",
     context: "Event-driven AWS",
-    href: "https://github.com/Jerry-Khobby/Music-Streaming-Data-Pipeline",
+    repo: "https://github.com/Jerry-Khobby/Music-Streaming-Data-Pipeline",
     thumb: "S3 → EventBridge\n→ SQS → Step Fn\n→ Glue",
     blurb:
       "Ingests simulated streaming events and computes genre-level listening metrics in Glue, with CloudWatch logging, Slack alerts and Terraform-managed infrastructure.",
@@ -67,7 +69,7 @@ const projects = [
   {
     title: "E-commerce Lakehouse",
     context: "Delta Lake on AWS",
-    href: "https://github.com/Jerry-Khobby/Lakehouse-Architecture-for-E-Commerce-Transactions-",
+    repo: "https://github.com/Jerry-Khobby/Lakehouse-Architecture-for-E-Commerce-Transactions-",
     thumb: "S3\n→ quality checks\n→ Delta tables",
     blurb:
       "Loads transaction data into Delta Lake with Glue and PySpark after null, timestamp and duplicate checks, logging rejected records. Orchestrated by Step Functions with CI in GitHub Actions.",
@@ -76,7 +78,7 @@ const projects = [
   {
     title: "Heartbeat Monitoring",
     context: "Real-time streaming",
-    href: "https://github.com/Jerry-Khobby/Real-Time-Customer-Heartbeat-Monitoring-System",
+    repo: "https://github.com/Jerry-Khobby/Real-Time-Customer-Heartbeat-Monitoring-System",
     thumb: "Kafka\n→ Spark Streaming\n→ Postgres\n→ Grafana",
     blurb:
       "Streams simulated heart-rate events through Kafka and Spark Structured Streaming, validates them and stores them in PostgreSQL, with live Grafana dashboards in Docker Compose.",
@@ -85,7 +87,7 @@ const projects = [
   {
     title: "Collaborative Whiteboard",
     context: "Real-time backend",
-    href: "https://github.com/Jerry-Khobby/real-time-collaborative-whiteboard",
+    repo: "https://github.com/Jerry-Khobby/real-time-collaborative-whiteboard",
     thumb: "rooms\ndraw events\nthrottled\n60 FPS",
     blurb:
       "Canvas rooms and draw-event broadcasting on NestJS and Socket.IO, with input throttling that holds 60 FPS under load, wired to a Next.js frontend.",
