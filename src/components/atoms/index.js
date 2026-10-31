@@ -4,6 +4,7 @@ export { default as Highlight } from "./Highlight";
 export { default as IconLink } from "./IconLink";
 export { default as NavLink } from "./NavLink";
 export { default as ProjectShot } from "./ProjectShot";
+export { default as RichText } from "./RichText";
 export { default as SectionHeading } from "./SectionHeading";
 export { default as StatusBadge } from "./StatusBadge";
 export { default as Tag } from "./Tag";

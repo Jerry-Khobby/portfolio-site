@@ -10,7 +10,7 @@ const LayersList = ({ layers }) => (
       >
         <h3 className="m-0 text-base font-semibold text-heading">{name}</h3>
         <p className="m-0 mt-2 text-[15px]">{body}</p>
-        <TagList tags={tags} />
+        {tags && <TagList tags={tags} />}
       </ListRow>
     ))}
   </ol>

@@ -1,5 +1,6 @@
 export { default as AboutSection } from "./AboutSection";
 export { default as CaseStudyHeader } from "./CaseStudyHeader";
+export { default as CaseStudySection } from "./CaseStudySection";
 export { default as CursorEffects } from "./CursorEffects";
 export { default as DecisionsList } from "./DecisionsList";
 export { default as EducationSection } from "./EducationSection";

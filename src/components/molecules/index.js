@@ -7,5 +7,6 @@ export { default as MetaList } from "./MetaList";
 export { default as ProjectItem } from "./ProjectItem";
 export { default as SectionNav } from "./SectionNav";
 export { default as SocialLinks } from "./SocialLinks";
+export { default as StatGrid } from "./StatGrid";
 export { default as TagList } from "./TagList";
 export { default as ToolGroup } from "./ToolGroup";
