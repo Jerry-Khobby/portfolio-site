@@ -23,9 +23,10 @@ const AboutSection = () => (
       <p className="m-0">
         I studied Computer Science at <Highlight>KNUST</Highlight>, where my final-year
         project put a CNN-LSTM sepsis model behind a FastAPI service with SHAP
-        explanations, so I know how AI models connect to live systems. In the evenings I'm
-        building <Highlight>Seatline</Highlight> and <Highlight>SikaTrack</Highlight>, two
-        products for how Ghana actually travels and pays.
+        explanations, so I know how AI models connect to live systems. Outside work I
+        recently shipped <Highlight>Seatline</Highlight>, online booking for Ghana's
+        intercity buses, and I'm now building <Highlight>SikaTrack</Highlight>, a budgeting
+        app for mobile-money users.
       </p>
     </div>
   </ContentSection>

@@ -1,4 +1,8 @@
-// `href` is the external repo or demo; `caseStudy` is an internal route.
+import seatlineShot from "../assets/projects/seatline.jpg";
+
+// `href` is the live site or repo the title links to; `repo` adds a separate
+// "Source code" link when `href` is a live site; `caseStudy` is an internal
+// route; `image` replaces the text thumbnail with a screenshot.
 const currentProjects = [
   {
     title: "SikaTrack",
@@ -11,20 +15,19 @@ const currentProjects = [
       "Backend, pipeline and CI are running; the Android app has launch and sign-in done, main tabs next.",
     tags: ["FastAPI", "Airflow", "PostgreSQL", "Expo", "Docker", "Metabase"],
   },
-  {
-    title: "Seatline",
-    caseStudy: "",
-    href: "https://github.com/Jerry-Khobby/ghana-bus-booking",
-    thumb: "GR 4471-24\nAccra → Kumasi\nBay 6 · loading\nSeat B3 held",
-    blurb:
-      "Online booking for intercity buses in Ghana: see which bus is loading, pick a seat on a live map, pay with mobile money and board with a QR ticket. Agents and operators run the station from the same system.",
-    status:
-      "22 screens designed and the React frontend built; NestJS API, server-owned seat holds and Paystack next.",
-    tags: ["React", "TypeScript", "NestJS", "Prisma", "Socket.IO", "Paystack"],
-  },
 ];
 
 const projects = [
+  {
+    title: "Seatline",
+    context: "Live · intercity bus booking for Ghana",
+    href: "https://ghana-bus-booking.vercel.app/",
+    repo: "https://github.com/Jerry-Khobby/ghana-bus-booking",
+    image: seatlineShot,
+    blurb:
+      "See which bus is loading, pick a seat on a live seat map, pay with mobile money and board with a QR ticket. Station agents sell walk-in seats and scan tickets, and operators manage trips, buses and seat layouts, all in one system. 22 screens, seats held on the server, and live updates over Server-Sent Events.",
+    tags: ["React", "TypeScript", "NestJS", "PostgreSQL", "Prisma", "Paystack", "Tailwind CSS"],
+  },
   {
     title: "CampusBid",
     context: "Campus marketplace backend",
